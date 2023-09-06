@@ -47,7 +47,12 @@ input[type="text"] {
 } */
 
 /* ... Your previous CSS rules ... */
-
+:-ms-input-placeholder{
+    color: white;
+}
+::-webkit-input-placeholder{
+    color: white;
+}
 .input-container {
     display: flex;
     align-items: center;
