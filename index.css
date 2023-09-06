@@ -6,7 +6,6 @@
 }
 body{
     background-color: rgb(75, 69, 79);
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,12 +19,14 @@ body{
     padding: 20px;
     margin: 20px;
    width: 35vw;
+   height: 80vh;
   }
   .input-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 10px;
+    margin-top: 10px;
     border: none;
     border-radius: 20px;
     background-color: black;
@@ -47,13 +48,38 @@ body{
 
   #addTaskButton {
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #20b2f0;
     border: none;
-    padding: 7px;
+    padding: 8px;
     border-radius: 20px;
     margin-right: 1rem;
+    color: white;
   }
 
   #addTaskButton i {
+    font-size: 15px;
+  }
+  .wh{
+    height: 50%;
+    overflow: auto;
+  }
+  .completed-container{
+    overflow: auto;
+  }
+  h1{
     font-size: 20px;
+    color: black;
+    border-bottom: 2px solid black;
+    font-weight: 500;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
   }
