@@ -1,5 +1,5 @@
 const addBtn = document.getElementById("addTaskButton");
-const TaskCompleted = document.getElementById("completedList");
+const TaskCompleted = document.querySelector(".completedList");
 const TaskList = document.getElementById("taskList");
 
 // Loading task list when page reloads
@@ -37,18 +37,40 @@ function createElement(userInputs = "") {
   // create checkBox
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
-  checkBox.addEventListener("click", function () {
-    createList.classList.toggle("completedList");
+  checkBox.className = "check";
 
-    if (createList.classList.toggle("completedList")) {
-      completedList.appendChild(createList.cloneNode(true)); // Moving to task completed container
-      createList.remove(); // removing elem from task list.
+  // checkBox.addEventListener("click", function () {
+  //   createList.classList.toggle("completedList");
+
+  //   if (createList.classList.contains("completedList")) {
+  //     TaskCompleted.appendChild(createList.cloneNode(true)); // Moving to task completed container
+  //     createList.remove(); // removing elem from task list.
+  //   } else {
+  //     TaskList.appendChild(createList.cloneNode(true));
+  //     createList.remove();
+  //   }
+  //   Update();
+  // });
+
+  checkBox.addEventListener("click", function () {
+    if (checkBox.checked) {
+      createList.classList.add("completedList");
+      TaskCompleted.appendChild(createList.cloneNode(true));
     } else {
+      createList.classList.remove("completedList");
       TaskList.appendChild(createList.cloneNode(true));
-      createList.remove();
     }
+    createList.remove(); // Remove the task after moving it
     Update();
   });
+  
+  TaskCompleted.addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("fa-trash")) {
+      e.target.parentElement.remove();
+      Update();
+    }
+  });
+  
 
   //create delete icon
 
@@ -61,6 +83,9 @@ function createElement(userInputs = "") {
   createList.appendChild(checkBox);
   createList.appendChild(document.createTextNode(userInputs));
   createList.appendChild(deleteIcon);
+
+  document.getElementById("userInputs").value = "";
+
   return createList;
 }
 
