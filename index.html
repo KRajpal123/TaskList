@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
     <title>Todo List</title>
-</head>
-<body>
-    <h1>Jai Sree Ram</h1>
-</body>
+  </head>
+  <body>
+    <div class="Box">
+      <h1>Js todo website</h1>
+      <div class="input-container">
+        <input type="text" placeholder="add items" id="addTask" />
+        <button id="addTaskButton">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+      <h1>To Do</h1>
+      <ul id="taskList"></ul>
+
+      <div class="completed-container">
+        <h5>completed tasks</h5>
+        <ul class="completed"></ul>
+      </div>
+    </div>
+  </body>
 </html>
