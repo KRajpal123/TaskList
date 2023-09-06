@@ -46,7 +46,6 @@ input[type="text"] {
   border-radius: 20px;
 } */
 
-/* ... Your previous CSS rules ... */
 :-ms-input-placeholder{
     color: white;
 }
